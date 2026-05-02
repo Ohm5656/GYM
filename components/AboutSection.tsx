@@ -44,9 +44,12 @@ export function AboutSection() {
                 fill
                 quality={65}
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-center brightness-[0.72] contrast-[1.12] saturate-[0.88] transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background-main/90 to-transparent" />
+              <div className="absolute inset-0 bg-background-main/25" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background-main via-background-main/30 to-background-main/40" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background-main/45 via-transparent to-background-main/45" />
+              <div className="absolute inset-0 shadow-[inset_0_0_120px_rgba(0,0,0,0.75)]" />
               {/* Orange highlight line */}
               <div className="absolute top-0 left-0 w-1 h-full bg-accent-orange" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
