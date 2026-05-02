@@ -150,18 +150,19 @@ export function NavigationWarmup() {
     };
 
     document.addEventListener("pointerover", warmLink, passiveCapture);
-    document.addEventListener("touchstart", warmLink, passiveCapture);
+    document.addEventListener("click", warmLink, passiveCapture);
     document.addEventListener("focusin", warmLink, true);
 
     return () => {
       document.removeEventListener("pointerover", warmLink, passiveCapture);
-      document.removeEventListener("touchstart", warmLink, passiveCapture);
+      document.removeEventListener("click", warmLink, passiveCapture);
       document.removeEventListener("focusin", warmLink, true);
     };
   }, [warmRoute]);
 
   useEffect(() => {
     const navigateEarly = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse") return;
       if (!isPlainPrimaryPointer(event)) return;
 
       const route = getRouteFromEvent(event);
