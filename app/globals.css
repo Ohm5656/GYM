@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #050505;
+    --foreground: #ffffff;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    /* Subtle noise texture using base64 CSS */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .font-thai {
+    font-family: var(--font-noto-sans-thai), var(--font-inter), sans-serif;
+  }
+  .font-english {
+    font-family: var(--font-oswald), sans-serif;
+  }
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border;
+  }
+  .sport-glow {
+    @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-accent-orange/20 before:blur-xl;
+  }
+}
